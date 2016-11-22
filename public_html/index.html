@@ -62,9 +62,10 @@
       ng-options="option.name for option in options">
           </select>
     <label>To</label>
-    <select name="selectedOptionTo" id="selectedOptionTo"
-      ng-model="selectedOptionTo"
-      ng-options="option.name for option in optionsTo">
+    <select name="selectedOptionTo"
+            ng-model="selectedOptionTo" >
+        <option
+            ng-repeat="option  in optionsTo" value="{{option.value}}">{{option.value}} </option>
     </select>
         </div>
         </div>
@@ -99,7 +100,7 @@
       </uib-tab>
       <uib-tab index="2" heading="STEP 3">
            <ng-form  name="nestedForm" ng-submit="">
-               <h4> <a href="{{email}}">{{fname}} {{lname}}</a> ({{phone}}) will depart for <div name="depart" ng-model="depart">{{selectedOption.value}}</div> on <em>{{dt | date:'fullDate' }}</em> and return on <em>{{dt1 | date:'fullDate' }}</em>. </h4>
+               <h4> <a href="{{email}}">{{fname}} {{lname}}</a> ({{phone}}) will depart for <div name="depart" ng-model="depart">{{selectedOption.value}}</div> on <em>{{dt | date:'fullDate' }}</em> and return to {{selectedOptionTo}} on <em>{{dt1 | date:'fullDate' }}</em>. </h4>
             <input type="submit" ng-model="btn"  value="submit" class="btn btn-primary"  >
            </ng-form>
       </uib-tab>

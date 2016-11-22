@@ -24,7 +24,7 @@ app.post('/index',function(req,res){
 	lastname:req.body.lastname,
 	phone:req.body.phone,
         from: req.body.depart,
-        to: req.body.selectedOptionTo.value,
+        to: req.body.selectedOptionTo,
         date: req.body.dt,
         dateTo: req.body.dt1
 	};
